@@ -1,6 +1,7 @@
 package CursoSpringBoot.Controllers;
 
 import CursoSpringBoot.domain.Product;
+import CursoSpringBoot.services.ProductService;
 import CursoSpringBoot.services.ProductsServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,9 @@ import java.util.List;
 @RequestMapping("/productos")
 public class ProductController {
 
-    ProductsServiceImpl productsService = new ProductsServiceImpl();
+    ProductService productsService = new ProductsServiceImpl();
+
+
     @GetMapping
     public ResponseEntity<?> getProducts(){
         List<Product> products = productsService.getProducts();
