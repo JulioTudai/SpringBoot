@@ -3,11 +3,11 @@ decorara clases con spring
 @getMapping
 @pathVariable
 
-que es la logica de negocio: reglas y procesos que definen como opera una aplicacion o sistema en terminos de la manipulacion y procesamiento de datos.
+*que es la logica de negocio: reglas y procesos que definen como opera una aplicacion o sistema en terminos de la manipulacion y procesamiento de datos.
 
-Micro Servicios:  desarmar los servicios que provee la aplicacion en metodos mas pequeños y de tareas especificas.
+*Micro Servicios:  desarmar los servicios que provee la aplicacion en metodos mas pequeños y de tareas especificas.
 
-arquitectura basada en capas: se manejan en 3 capas basicas, pero pueden haber mas
+*arquitectura basada en capas: se manejan en 3 capas basicas, pero pueden haber mas
 
 1.Capa de presentacion: suele ser minima en los microservicios o inexistente, porque los micro servicios generalmente no tienen interface de usuario directa,
 en algunos casos un microservicio podria tener una api de interfaz de usuario para interactuar con ontras partes del sistema o con aplicaciones externas,
@@ -23,3 +23,19 @@ en un microservicio cada servicio puede tener su propia base de datos o comparti
 puede incluir componentes de comunicacion como clientes HTTP.
 
 5. capa de seguridad: implementa lasmedidas de seguridad, como la autenticacion y la autorizacion para proteger el microserviciocontra accesos no autorizados.
+
+*inyeccion de dependencias : reduce el acoplamiento entre componentes,facilita mantenimiento y mejora escalabilidad
+
+*version de control : trabaja con la inyeccion de dependencias, el control de la creacion y  gestion de obejtos se invierte, desde el codigo a un contenedor o framweork (ej spring)
+
+@Service : esta decoracion va en la clase que implementa los servicios dentro de la paquete service, y hace que el framwork se encargue de crear las instancias
+de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea necesario.
+
+@Autowired le indica a spring que debe inyectar automaticamente una dependencia en el lugar donde se declara. puede usarse en un constructor,metodo sett, o en un atributo de clase.
+
+*JACSON es una biblioteca muy usada en java para procesar fatos en formato json, algunas de sus funcionalidades son:
+-Serializacion: convierte objetos java en representaciones json para ser almacenadas o transmitidas.
+-deserializacion transforma datos json en objetos java asi se puede trabajar con ellos
+
+@Primary: existe para resolver conflictos cuando existen multiples beans del mismo tipo en el contexto de la aplicacion,
+entonces esta anotacion define cual debe ser el primario de forma predeterminada
