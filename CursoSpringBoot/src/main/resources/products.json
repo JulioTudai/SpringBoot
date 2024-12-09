@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "laptopcc",
+    "price": 799.00,
+    "stock": 11
+  },
+  {
+    "id": 2,
+    "name": "spartphonee",
+    "price": 499.00,
+    "stock": 22
+  },
+  {
+    "id": 3,
+    "name": "Tablett",
+    "price": 299.00,
+    "stock": 155
+  },
+  {
+    "id": 4,
+    "name": "Smartwachh",
+    "price": 199.00,
+    "stock": 300
+  }
+]
