@@ -20,7 +20,7 @@ public class ProductController {
 
 
     @Autowired//usando inyeccion de dependencias
-    @Qualifier("listResourceService")
+    //@Qualifier("listResourceService") comentamos para usar conditionalOnProperty
     private ProductService  productsService;
 
     @GetMapping
