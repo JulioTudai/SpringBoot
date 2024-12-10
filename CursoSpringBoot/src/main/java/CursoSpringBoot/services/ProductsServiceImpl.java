@@ -2,11 +2,13 @@ package CursoSpringBoot.services;
 
 import CursoSpringBoot.domain.Product;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+@Lazy
 @Service
 @ConditionalOnProperty(name = "service.products",havingValue = "list")
 
