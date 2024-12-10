@@ -1,9 +1,9 @@
 package CursoSpringBoot.Controllers;
 
+import CursoSpringBoot.Configurations.ExternalizedConfigurations;
 import CursoSpringBoot.domain.Product;
 import CursoSpringBoot.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,8 +25,13 @@ public class ProductController {
     //@Qualifier("listResourceService") comentamos para usar conditionalOnProperty
     private ProductService  productsService;
 
+    @Autowired
+    private ExternalizedConfigurations externalizedConfigurations;
+
     @GetMapping
     public ResponseEntity<?> getProducts(){
+
+        System.out.println(externalizedConfigurations.toString());
         List<Product> products = productsService.getProducts();
 
         return ResponseEntity.ok(products);

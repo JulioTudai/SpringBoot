@@ -43,3 +43,21 @@ de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea
 entonces esta anotacion define cual debe ser el primario de forma predeterminada
 
 @Qualifier: se usa para especificar que beans debe ser inyectado cuando hay varios beans del mismo tipo
+
+@ConditionalOnProperty: Permite que ciertos beans se registren si se cumplen ciertas condiciones basadas en las propiedades de configuracion,
+Permite activar o desactivar beans dependiendo de las propiedades definidas en los archivos de configuracion applicaion.properties o application.iml
+Uso : tiene 2 valores
+-Name : especifica el nombre de la propiedad que se va a evaluar
+-heavingValue : especifica el valor que debe tener la propiedad para que el bean sea registrado.
+
+@Lazy el beans se crea cuando realmente se necesite, mejora el rendimiento de la aplicacion para no consumir recursos que puedan no usarse.
+Uso
+
+*Externalizacion de configuracion : es el proceso de separar los valores de configuracion de una aplicacion del codigo fuente, permitiendo que estos valores
+se almacenen en archivos de configuracion( Applicaiont.propierties), variables de entorno o sistemas externos, facilita la gestio de la configuracion, ya que permite
+modificarla sin cambiar el codigo, adaptarla a diferentes entornos (desarrollo,pruebas,produccion) mejorando la seguridad y el mantenimiento de la aplicacion.
+
+@configuration indica que una clase proporciona definiciones de beans. Spring trata la clase como una fiente de configuraciones, podes crear un bean que se
+conecte a una base de datos o que sirva como servicio en tu aplicacion.
+
+@ConfigurationProperties: Permite mapear propiedades de configuracion externa a una clase(Como las definidas en application.propierties)
