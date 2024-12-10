@@ -28,6 +28,8 @@ puede incluir componentes de comunicacion como clientes HTTP.
 
 *version de control : trabaja con la inyeccion de dependencias, el control de la creacion y  gestion de obejtos se invierte, desde el codigo a un contenedor o framweork (ej spring)
 
+*beans es un objeto o clase gestionada por spring ( que spring se encarga de ayudarlo con las tareas a realizar)
+
 @Service : esta decoracion va en la clase que implementa los servicios dentro de la paquete service, y hace que el framwork se encargue de crear las instancias
 de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea necesario.
 
@@ -39,3 +41,5 @@ de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea
 
 @Primary: existe para resolver conflictos cuando existen multiples beans del mismo tipo en el contexto de la aplicacion,
 entonces esta anotacion define cual debe ser el primario de forma predeterminada
+
+@Qualifier: se usa para especificar que beans debe ser inyectado cuando hay varios beans del mismo tipo
