@@ -10,21 +10,21 @@ decorara clases con spring
 *arquitectura basada en capas: se manejan en 3 capas basicas, pero pueden haber mas
 
 1.Capa de presentacion: suele ser minima en los microservicios o inexistente, porque los micro servicios generalmente no tienen interface de usuario directa,
-en algunos casos un microservicio podria tener una api de interfaz de usuario para interactuar con ontras partes del sistema o con aplicaciones externas,
+en algunos casos un microservicio podria tener una api de interfaz de usuario para interactuar con otras partes del sistema o con aplicaciones externas,
 en nuestro caso podrian ser los controladores.
 
 2.Capa de logica de negocio (servicios): contiene principalemte los servicios, las clases que implementan la logica de negocio especifica del servicio y proporcionan una interfaz para interactuar con ella,
 los servicios son responsables de implementar las reglas, realizar calculos, validar datos y coordinar operaciones.
 
-3.capa de accesoa datos: interactua con la base de datos o otros sitemas de almacenamiento de datos.
-en un microservicio cada servicio puede tener su propia base de datos o compartir una bas de datos con otros microservicios.
+3.capa de acceso a datos: interactua con la base de datos u otros sistemas de almacenamiento de datos.
+en un microservicio cada servicio puede tener su propia base de datos o compartir una base de datos con otros microservicios.
 
-4.capa de integacion: integra los microservicios con sistemas externos o con otros microservicios,
+4.capa de integracion: integra los microservicios con sistemas externos o con otros microservicios,
 puede incluir componentes de comunicacion como clientes HTTP.
 
-5. capa de seguridad: implementa lasmedidas de seguridad, como la autenticacion y la autorizacion para proteger el microserviciocontra accesos no autorizados.
+5. capa de seguridad: implementa las medidas de seguridad, como la autenticacion y la autorizacion para proteger el microserviciocontra accesos no autorizados.
 
-*inyeccion de dependencias : reduce el acoplamiento entre componentes,facilita mantenimiento y mejora escalabilidad
+*inyeccion de dependencias : reduce el acoplamiento entre componentes, facilita el mantenimiento y mejora escalabilidad
 
 *version de control : trabaja con la inyeccion de dependencias, el control de la creacion y  gestion de obejtos se invierte, desde el codigo a un contenedor o framweork (ej spring)
 
@@ -33,9 +33,9 @@ puede incluir componentes de comunicacion como clientes HTTP.
 @Service : esta decoracion va en la clase que implementa los servicios dentro de la paquete service, y hace que el framwork se encargue de crear las instancias
 de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea necesario.
 
-@Autowired le indica a spring que debe inyectar automaticamente una dependencia en el lugar donde se declara. puede usarse en un constructor,metodo sett, o en un atributo de clase.
+@Autowired le indica a spring que debe inyectar automaticamente una dependencia en el lugar donde se declara. puede usarse en un constructor, metodo sett, o en un atributo de clase.
 
-*JACSON es una biblioteca muy usada en java para procesar fatos en formato json, algunas de sus funcionalidades son:
+*JACSON es una biblioteca muy usada en java para procesar datos en formato json, algunas de sus funcionalidades son:
 -Serializacion: convierte objetos java en representaciones json para ser almacenadas o transmitidas.
 -deserializacion transforma datos json en objetos java asi se puede trabajar con ellos
 
@@ -57,7 +57,7 @@ Uso
 se almacenen en archivos de configuracion( Applicaiont.propierties), variables de entorno o sistemas externos, facilita la gestio de la configuracion, ya que permite
 modificarla sin cambiar el codigo, adaptarla a diferentes entornos (desarrollo,pruebas,produccion) mejorando la seguridad y el mantenimiento de la aplicacion.
 
-@configuration indica que una clase proporciona definiciones de beans. Spring trata la clase como una fiente de configuraciones, podes crear un bean que se
+@configuration indica que una clase proporciona definiciones de beans. Spring trata la clase como una fuente de configuraciones, podes crear un bean que se
 conecte a una base de datos o que sirva como servicio en tu aplicacion.
 
 @ConfigurationProperties: Permite mapear propiedades de configuracion externa a una clase(Como las definidas en application.propierties)
