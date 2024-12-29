@@ -1,7 +1,20 @@
 decorara clases con spring
-@restController
-@getMapping
-@pathVariable
+
+@restController: Marca una clase como un controlador en una aplicación Spring y permite manejar solicitudes HTTP.
+
+@getMapping : Define un endpoint HTTP para manejar solicitudes GET , Se usa para mapear una URL específica a un método de un controlador. EJ:
+@GetMapping("/usuarios")
+public List<Usuario> obtenerUsuarios() {
+    return servicioUsuario.obtenerTodos();
+}
+
+
+@pathVariable: Vincula una variable de ruta de una URL al parámetro de un método en el controlador. Se usa cuando necesitas capturar partes de la URL como parámetros dinámicos. EJ:
+@GetMapping("/usuarios/{id}")
+public Usuario obtenerUsuarioPorId(@PathVariable Long id) {
+    return servicioUsuario.buscarPorId(id);
+}
+
 
 *que es la logica de negocio: reglas y procesos que definen como opera una aplicacion o sistema en terminos de la manipulacion y procesamiento de datos.
 
@@ -37,7 +50,7 @@ de esa clase y asi poder inyectarlas en otras partes de la aplicacion cuando sea
 
 *JACSON es una biblioteca muy usada en java para procesar datos en formato json, algunas de sus funcionalidades son:
 -Serializacion: convierte objetos java en representaciones json para ser almacenadas o transmitidas.
--deserializacion transforma datos json en objetos java asi se puede trabajar con ellos
+-deserializacion: transforma datos json en objetos java asi se puede trabajar con ellos
 
 @Primary: existe para resolver conflictos cuando existen multiples beans del mismo tipo en el contexto de la aplicacion,
 entonces esta anotacion define cual debe ser el primario de forma predeterminada
